@@ -9,7 +9,7 @@ from slmsDbLib import Computer
 
 class TestQuery(unittest.TestCase):
     def setUp(self):
-        self.engine = create_engine('sqlite:///:memory:')
+        self.engine = create_engine('sqlite:///slms.database')
         self.session = Session(engine)
         Base.metadata.create_all(self.engine)
         self.Computer = Computer('ABC123', 'Test computer')
